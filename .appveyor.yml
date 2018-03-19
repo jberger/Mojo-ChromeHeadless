@@ -10,5 +10,4 @@ install:
   - cpanm --verbose --installdeps .
 
 build_script:
-  - perl Makefile.PL
-  - gmake test
+  - prove -l

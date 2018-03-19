@@ -1,8 +1,8 @@
 skip_tags: true
 
-cache:
-  - C:\strawberry
-  - "C:\\Program Files (x86)\\Google"
+#cache:
+#  - C:\strawberry
+#  - "C:\\Program Files (x86)\\Google"
   
 install:
   - if not exist "C:\\strawberry" cinst --allow-empty-checksums strawberryperl

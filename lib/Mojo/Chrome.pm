@@ -20,7 +20,7 @@ use Scalar::Util ();
 use constant DEBUG => $ENV{MOJO_CHROME_DEBUG};
 
 has [qw/tx/];
-has arguments => sub { ['--headless'] };
+has arguments => sub { ['--headless', '--disable-gpu'] };
 has base => sub { Mojo::URL->new };
 has executable => sub {
   shift->detect_chrome_executable()

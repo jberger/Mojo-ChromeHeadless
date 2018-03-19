@@ -6,10 +6,10 @@ cache:
   
 install:
   - if not exist "C:\\strawberry" cinst --allow-empty-checksums strawberryperl
-  - i not exist "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" cinst googlechrome
+  - if not exist "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" cinst googlechrome
   - set PATH=C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
   - cd C:\projects\%APPVEYOR_PROJECT_NAME%
-  - cpanm --verbose --installdeps .
+  - cpanm --verbose --installdeps -n .
 
 build_script:
   - prove -l

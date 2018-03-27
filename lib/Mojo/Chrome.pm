@@ -33,8 +33,12 @@ sub detect_chrome_executable {
   # class method, no args
   return $ENV{MOJO_CHROME_EXECUTABLE} if $ENV{MOJO_CHROME_EXECUTABLE};
 
-  my $path = IPC::Cmd::can_run 'google-chrome';
-  return $path if $path && -f $path && -x _;
+  my $path = '';
+
+  foreach my $exe ( qw( chromium google-chrome ) ) {
+    $path = IPC::Cmd::can_run $exe;
+    return $path if $path && -f $path && -x _;
+  }
 
   if ($^O eq 'darwin') {
     $path = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';

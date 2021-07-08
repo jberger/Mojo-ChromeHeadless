@@ -40,6 +40,12 @@ sub detect_chrome_executable {
     $path = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
     return $path if $path && -f $path && -x _;
   }
+    elsif ( $^O =~ /MSWin32|cygwin/ ) {
+        $path = qx{where.exe /R "c:\\Program Files (X86)" chrome.exe};
+        chomp $path;
+        $path =~ s/\r$//; # remove windows' \r
+        return $path if $path && -f $path && -x _;
+    }
 
   return undef;
 }

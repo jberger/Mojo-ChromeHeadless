@@ -2,6 +2,11 @@
 
 Mojo-Chrome - A Mojo interface to Chrome DevTools Protocol
 
+=for html
+<a href="https://ci.appveyor.com/project/dmanto/mojo-chrome/branch/master">
+<img alt="Build status" src="https://ci.appveyor.com/api/projects/status/16qsmkylekt3xbt0/branch/master?svg=true" />
+</a>
+
 =head1 SYNOPSIS
 
   # This is the example from https://medium.com/@lagenar/using-headless-chrome-via-the-websockets-interface-5f498fb67e0f
